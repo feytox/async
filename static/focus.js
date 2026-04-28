@@ -1,6 +1,6 @@
 const API = {
     organizationList: "/orgsList",
-    analytics: "/api3/analytics",
+    analytics: "/api3/analitics",
     orgReqs: "/api3/reqBase",
     buhForms: "/api3/buh",
 };
@@ -22,7 +22,7 @@ run();
 async function sendRequest(url) {
     const response = await fetch(url);
     if (!response.ok) {
-        throw new Error(`${response.status} ${response.statusText}`);
+        alert(`${response.status} ${response.statusText}`);
     }
     return response.json();
 }
@@ -75,7 +75,7 @@ function renderOrganization(orgInfo, template, container) {
                 orgInfo.buhForms[orgInfo.buhForms.length - 1].form2[0] &&
                 orgInfo.buhForms[orgInfo.buhForms.length - 1].form2[0]
                     .endValue) ||
-                0
+                0,
         );
     } else {
         money.textContent = "—";
